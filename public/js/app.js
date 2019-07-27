@@ -11,9 +11,12 @@ weatherSearchForm.addEventListener("submit", e => {
   "use strick";
   e.preventDefault();
 
-  if (search.value == undefined || search.value == "") {
+  if (search.value == undefined) {
     dataOut.classList.add("deleteAny");
+    //style error :)
     errorP.style.color = "red";
+    errorP.style.border = "2px solid #888";
+
     errorP.textContent = "Add any location to search.. ";
   } else {
     const location = search.value;
@@ -29,18 +32,30 @@ weatherSearchForm.addEventListener("submit", e => {
           dataOut.classList.remove("deleteAny");
           locationP.textContent = "Loading...";
 
+          //style  :)
           dataOut.style.color = "blue";
-
-          errorP.classList.add("deleteAny");
+          dataOut.style.border = "2px solid #888";
+          dataOut.style.padding = "7px";
+          dataOut.style.marginLeft = "10px";
+          dataOut.style.backgroundColor = "#eee";
+          dataOut.style.fontSize = "25px";
+          dataOut.style.marginTop = "10px";
+          dataOut.style.borderRadius = "5px";
+          // dataOut.classList.add("deleteAny");
 
           weatherP.textContent = `${data.address} Weather: ${data.forecast}`;
           locationP.textContent = `location: ${data.location}`;
-          dataOut.classList.add("error");
         } else {
           errorP.classList.remove("deleteAny");
           errorP.textContent = "Loading...";
-          errorP.textContent = "Enter right location please";
-          errorP.style.color = red;
+          errorP.textContent = "Enter right location please.. :)";
+
+          //style error :)
+          errorP.style.color = "#eee";
+          errorP.style.border = "2px solid #eee";
+          errorP.style.padding = "7px";
+          errorP.style.marginLeft = "10px";
+          errorP.style.backgroundColor = "red";
         }
       })
       .catch(err => {
