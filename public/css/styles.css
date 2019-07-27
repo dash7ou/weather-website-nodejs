@@ -60,3 +60,7 @@ header a {
 .searchForm {
   display: inline-block;
 }
+
+.deleteAny {
+  display: none;
+}
