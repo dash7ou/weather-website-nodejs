@@ -30,6 +30,7 @@ weatherSearchForm.addEventListener("submit", e => {
       .then(data => {
         if (data.forecast) {
           dataOut.classList.remove("deleteAny");
+          errorP.classList.add("deleteAny");
           locationP.textContent = "Loading...";
 
           //style  :)
@@ -41,12 +42,12 @@ weatherSearchForm.addEventListener("submit", e => {
           dataOut.style.fontSize = "25px";
           dataOut.style.marginTop = "10px";
           dataOut.style.borderRadius = "5px";
-          // dataOut.classList.add("deleteAny");
 
           weatherP.textContent = `${data.address} Weather: ${data.forecast}`;
           locationP.textContent = `location: ${data.location}`;
         } else {
           errorP.classList.remove("deleteAny");
+          dataOut.classList.add("deleteAny");
           errorP.textContent = "Loading...";
           errorP.textContent = "Enter right location please.. :)";
 
