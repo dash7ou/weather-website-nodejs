@@ -16,7 +16,7 @@ weatherSearchForm.addEventListener("submit", e => {
   e.preventDefault();
   if (search.value == "") return console.log("Enter Address in Input ");
   const location = search.value;
-  const url = `http://localhost:3000/weather?address=${location}`;
+  const url = `/weather?address=${location}`;
   fetch(url)
     .then(res => res.json())
     .then(data => {
