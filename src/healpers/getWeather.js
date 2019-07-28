@@ -4,7 +4,7 @@ module.exports = function getWeather(data) {
   return new Promise((resolve, reject) => {
     const latitude = data.latitude;
     const longitude = data.longitude;
-    const url = `https://api.darksky.net/forecast/f564e9e504a118597f75ab17df0324cd/${longitude},${latitude}`;
+    const url = `https://api.darksky.net/forecast/f564e9e504a118597f75ab17df0324cd/${longitude},${latitude}?units=si`;
 
     request({ url: url, json: true }, (err, res) => {
       if (err) return reject("Unable to connect to weather server");
