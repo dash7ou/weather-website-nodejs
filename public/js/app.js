@@ -57,6 +57,7 @@ weatherSearchForm.addEventListener("submit", e => {
           errorP.style.padding = "7px";
           errorP.style.marginLeft = "10px";
           errorP.style.backgroundColor = "red";
+          errorP.style.textAlign = "center";
         }
       })
       .catch(err => {
